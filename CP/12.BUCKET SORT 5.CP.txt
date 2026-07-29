@@ -1,0 +1,29 @@
+n = int(input())
+arr = list(map(float, input().split()))
+
+if all(0 <= x < 1 for x in arr):
+    buckets = [[] for _ in range(n)]
+
+    for num in arr:
+        index = int(num * n)
+        if index == n:
+            index = n - 1
+        buckets[index].append(num)
+
+    for bucket in buckets:
+        bucket.sort()
+
+    result = []
+    for bucket in buckets:
+        result.extend(bucket)
+
+    print(*["{:.2f}".format(x) for x in result])
+else:
+    arr.sort()
+    ans = []
+    for x in arr:
+        if x.is_integer():
+            ans.append(str(int(x)))
+        else:
+            ans.append(str(x))
+    print(*ans)

@@ -1,0 +1,11 @@
+def divide(dividend, divisor):
+    INT_MAX = 2**31 - 1
+    INT_MIN = -2**31
+    quotient = int(dividend / divisor)
+    if quotient > INT_MAX:
+        return INT_MAX
+    if quotient < INT_MIN:
+        return INT_MIN
+    return quotient
+dividend, divisor = map(int, input().split())
+print(divide(dividend, divisor))

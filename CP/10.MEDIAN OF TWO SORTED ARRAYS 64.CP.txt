@@ -1,0 +1,10 @@
+n,m= map(int,input().split())
+arr1=list(map(int,input().split()))
+arr2=list(map(int,input().split()))
+arr=sorted(arr1+arr2)
+if len(arr)%2==1:
+    print(arr[len(arr)/2])
+else:
+    median = (arr[len(arr) // 2 - 1] + arr[len(arr) // 2]) / 2
+    print(f"{median:.1f}")
+    
