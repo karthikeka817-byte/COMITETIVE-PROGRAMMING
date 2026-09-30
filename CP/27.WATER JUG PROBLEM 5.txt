@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+A, B, T = map(int, input().split())
+g = math.gcd(A, B)
+if T <= max(A, B) and T % g == 0:
+    print("YES")
+else:
+    print("NO")

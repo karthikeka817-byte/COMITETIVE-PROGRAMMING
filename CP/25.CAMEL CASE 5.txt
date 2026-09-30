@@ -1,0 +1,29 @@
+
+n = int(input())
+
+words = input().split(",")
+
+pattern = input()
+
+answer = []
+
+for word in words:
+   
+    abbr = ""
+
+    for ch in word:
+        if ch.isupper():
+            abbr += ch
+
+    if abbr.startswith(pattern):
+        answer.append((abbr, word))
+
+
+answer.sort()
+
+if len(answer) == 0:
+    print("No match found")
+else:
+    for abbr, word in answer:
+        print(word)
+
